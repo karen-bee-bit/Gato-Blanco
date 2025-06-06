@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Acerca De Nosotros</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font  Pendiente -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.ico" type="image/x-icon" />
+    <img src="images/icono.png" alt="Icono" class="icono-esquina">
+    <a href="https://wa.me/3168043558" class="whatsapp-float" target="_blank" title="Envíanos un mensaje">
+    <i class="fab fa-whatsapp"></i>
+   
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+  
+</head>
+</body>
+<style>
+  .icono-esquina {
+      position: fixed; /* Se mantiene en su lugar al hacer scroll */
+      top: 50px;
+      right: 1300px;
+      width: 180px; /* Ajusta según tu imagen */
+      height:60px;
+      z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    }
+        /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: bounce 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128c7e;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    .carousel-container {
+  position: relative;
+  background: #fff;
+  border: 6px solid #fffefe;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  padding: 150px 90px;
+  overflow: hidden;
+  max-width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.arrow {
+  font-size: 36px;
+  color: #999;
+  user-select: none;
+  pointer-events: none; /* Solo decorativas */
+  animation: glow 1.8s infinite ease-in-out;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.arrow-left {
+  animation-delay: 0s;
+}
+.arrow-right {
+  animation-delay: 0.9s;
+}
+
+.carousel-frame {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 50px;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-track img {
+  height: 210px;
+  object-fit: contain;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+.carousel-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    color: #ccc;
+    text-shadow: 0 0 0 transparent;
+  }
+  50% {
+    color: #666;
+    text-shadow: 0 0 12px #aaa;
+  }
+}
+
+.overlay-bottom {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente para el overlay */
+}
+    
+.icono-esquina {
+      position: fixed; /* Se mantiene en su lugar al hacer scroll */
+      top: 15px;
+      right: 1300px;
+      width: 180px; /* Ajusta según tu imagen */
+      height:60px;
+      z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    }
+    body {
+  background-color: #FFFFFF; /* Usa el color que prefieras */
+}
+.mb-3 {
+  color: #FCA311; /* Cambia este código por el color que desees */
+}
+.btn-primary {
+  background-color: #F4A261; /* Fondo del botón */
+  color: #FFFFFF;            /* Color del texto */
+  border-color: #F4A261;     /* Borde (opcional) */
+}
+    
+ </style>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Inicio</a>
+                    <a href="about.html" class="nav-item nav-link active">Acerca De Nosotros</a>
+                    <a href="service.html" class="nav-item nav-link">Blog y Testimonios</a>
+                    <div class="nav-item dropdown"></div>
+                    <a href="contact.html" class="nav-item nav-link">Contactenos</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+ <div class="container-fluid page-header mb-5 position-relative overlay-bottom"
+     style="background-image: url('images/banner.jpg'); background-size: cover; background-position: center;">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+        <h1 class="typewriter display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Acerca de Nosotros</h1>
+        <div class="d-inline-flex mb-lg-5">
+            <p class="m-0 text-white"><a class="text-white" href=""></a></p>
+            <p class="m-0 text-white px-2"></p>
+            <p class="m-0 text-white"></p>
+        </div>
+    </div>
+</div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="">
+              
+               <h1 class="display-4 text-center">Comprometidos desde 2024</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">Misión</h1>
+                    
+                    <h5 class="mb-3"></h5>
+                    <p>Para el año 2029, queremos ser reconocidos por nuestra calidad y excelencia en el desarrollo de nuestros proyectos; expandiendo nuestros servicios como una empresa competitiva, confiable, con proyección de crecimiento, personal idóneo para el desarrollo de nuestro trabajo y la satisfacción de nuestros clientes.</p>
+                    <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Ver Mas</a>
+                </div>
+                <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="images/about.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">Vision</h1>
+                    <p>Somos una empresa enfocada al diseño gráfico, diseño de páginas web, gestión de redes sociales, marketing digital, video marketing, papelaría corporativa, branding, creación de marca y material POP.
+
+                      Gato Blanco Diseño y Marketing S.A.S. está integrado por personal con idoneidad técnica y alta experiencia en el sector, que le permite el desarrollo y mejoramiento corporativo con el fin de satisfacer las necesidades del cliente..</p>
+                    
+                    <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Ver Mas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+     <h1 class="display-4 text-center">Nuestros Clientes </h1>
+<div class="carousel-container">
+  <div class="arrow arrow-left">❮</div>
+
+  <div class="carousel-frame">
+    <div class="carousel-track">
+      <img src="images/Clientes/Clientes 01.png" alt="Cliente 1" />
+      <img src="images/Clientes/Clientes 02.png" alt="Cliente 2" />
+      <img src="images/Clientes/Clientes 03.png" alt="Cliente 3" />
+      <img src="images/Clientes/Clientes 04.png" alt="Cliente 4" />
+      <img src="images/Clientes/Clientes 05.png" alt="Cliente 5" />
+      <img src="images/Clientes/Clientes 06.png" alt="Cliente 3" />
+      <img src="images/Clientes/Clientes 07.png" alt="Cliente 4" />
+      <img src="images/Clientes/Clientes 08.png" alt="Cliente 5" />
+      <!-- Duplicados para loop -->
+      <img src="images/Clientes/Clientes 09.png" alt="Cliente 1" />
+      <img src="images/Clientes/Clientes 10.png" alt="Cliente 3" />
+      <img src="images/Clientes/Clientes 11.png" alt="Cliente 4" />
+      <img src="images/Clientes/Clientes 12.png" alt="Cliente 5" />
+      <img src="images/Clientes/Clientes 13.png" alt="Cliente 3" />
+      <img src="images/Clientes/Clientes 14.png" alt="Cliente 4" />
+      <img src="images/Clientes/Clientes 15.png" alt="Cliente 5" /> 
+      <img src="images/Clientes/Clientes 16.png" alt="Cliente 3" />
+      <img src="images/Clientes/Clientes 18.png" alt="Cliente 4" />
+      <img src="images/Clientes/Clientes 17.png" alt="Cliente 5" />
+    </div>
+  </div>
+
+  <div class="arrow arrow-right">❯</div>
+</div>
+    
+    <!-- Footer Start -->
+     <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+     style="background-image: url('images/encabezado.jpg'); background-size: cover; background-position: center;">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Ponte en contacto</h4>
+                
+                <p><i class="fa fa-phone-alt mr-2"></i>+57 310 2639160</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>Info@gatoblanco.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Redes Sociales</h4>
+                <p>¡Síguenos y no te pierdas ninguna novedad!</p>
+                <div class="d-flex justify-content-start">
+                   
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/share/16fFigFDRm/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.linkedin.com/company/gato-blanco-dise%C3%B1o-y-marketing-s-a-s/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/gatoblancodiseno/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horarios</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Lunes a Viernes</h6>
+                    <p>7Am-5Pm</p>
+                    <h6 class="text-white text-uppercase">Sabados</h6>
+                    <p>8Am-12Pm</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Información</h4>
+                <p>‌Nuestro enfoque es, potenciar,transformar y crear ideas </p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary font-weight-bold px-3">Contactenos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            
+            <p class="m-0 text-white">Diseñado por<a class="font-weight-bold" href="https://www.instagram.com/codigodemichel/">@codigosdemichel</a></p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

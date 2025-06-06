@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog y Testimonos</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    
+
+    <!-- Google Font pendiente -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+     <link rel="icon" href="images/logo.ico" type="image/x-icon" />
+    <img src="images/icono.png" alt="Icono" class="icono-esquina">
+    <a href="https://wa.me/3168043558" class="whatsapp-float" target="_blank" title="Envíanos un mensaje">
+    <i class="fab fa-whatsapp"></i>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+  
+    <style>
+        body {
+      background-color: white;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+     header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-slider {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+    }
+
+    .image-slider img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      opacity: 0;
+      animation: fade 12s infinite;
+    }
+
+    .image-slider img:nth-child(1) { animation-delay: 0s; }
+    .image-slider img:nth-child(2) { animation-delay: 4s; }
+    .image-slider img:nth-child(3) { animation-delay: 8s; }
+
+    @keyframes fade {
+      0% { opacity: 1; }
+      30% { opacity: 1; }
+      33% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin: 0 0 0.5rem;
+    }
+
+    .card-content p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #222;
+      color: white;
+      margin-top: 2rem;
+    }
+  
+        .icono-esquina {
+      position: fixed; /* Se mantiene en su lugar al hacer scroll */
+      top: 50px;
+      right: 1300px;
+      width: 180px; /* Ajusta según tu imagen */
+      height:60px;
+      z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    }
+        /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: bounce 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128c7e;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  
+  /* Responsive */
+  @media (min-width: 768px) {
+    .projects {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .project {
+      width: 48%;
+    }
+  }
+  @media (min-width: 1024px) {
+    .project {
+      width: 32%;
+    }
+  }
+
+  main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: var(--spacing-xl) var(--spacing-lg);
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: var(--spacing-md);
+      text-align: center;
+    }
+    p.subtitle {
+      text-align: center;
+      color: var(--color-subtext);
+      font-size: 1.125rem;
+      margin-bottom: var(--spacing-xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--spacing-lg);
+    }
+    .testimonial-card {
+      background: var(--color-card-bg);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-lg);
+      box-shadow: 0 4px 6px var(--color-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover,
+    .testimonial-card:focus-within {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      cursor: default;
+    }
+    blockquote {
+      font-style: italic;
+      color: var(--color-subtext);
+      flex-grow: 1;
+      margin: 0 0 var(--spacing-md) 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      quotes: "“" "”" "‘" "’";
+    }
+    blockquote::before {
+      content: open-quote;
+      font-size: 2rem;
+      vertical-align: top;
+      color: #a1a1aa;
+      margin-right: 0.25rem;
+    }
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .author-pic {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 0 2px var(--color-card-bg);
+      flex-shrink: 0;
+    }
+    .author-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .author {
+      font-weight: 600;
+      color: var(--color-text);
+      font-size: 1.125rem;
+    }
+    .role {
+      font-size: 0.875rem;
+      color: var(--color-subtext);
+      font-weight: 500;
+    }
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    
+    
+    </style>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white"></h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Inicio</a>
+                    <a href="about.html" class="nav-item nav-link active">Acerca De Nosotros</a>
+                    <a href="service.html" class="nav-item nav-link">Blog y Testimonios</a></div>
+                    <a href="contact.html" class="nav-item nav-link">Contactenos</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom"
+     style="background-image: url('images/banner.jpg'); background-size: cover; background-position: center;">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+        <h1 class="typewriter display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Blog y Testimonios</h1>
+        <div class="d-inline-flex mb-lg-5">
+            <p class="m-0 text-white"><a class="text-white" href=""></a></p>
+            <p class="m-0 text-white px-2"></p>
+            <p class="m-0 text-white"></p>
+        </div>
+    </div>
+</div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+  
+  </header>
+ 
+              <h1 class="display-4 text-center">Nuestros Proyectos</h1>
+
+  <div class="container">
+    <div class="grid">
+
+      <!-- 20 proyectos con imágenes rotativas -->
+      <!-- Puedes reemplazar las imágenes por las tuyas -->
+      <!-- Solo ejemplo visual con picsum.photos -->
+
+      <!-- Proyecto 1 -->
+      <div class="card">
+        <div class="image-slider">
+          <img src="images/blog/1.jpeg">
+          <img src="images/blog/2.jpeg">
+          <img src="images/blog/3.jpeg">
+          <img src="images/blog/4.jpeg">
+        </div>
+        <div class="card-content">
+          <h3>PRODUCCIÓN GRÁFICA</h3>
+          <p>Creamos una estrategia de marca que conecta con tu público, diseñamos logotipos y gráficos, refinamos tu comunicación, generamos materiales de marketing y reflejamos la calidad en cada contacto. ¡Construye una identidad atractiva!.</p>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="card">
+        <div class="image-slider">
+          <img src="images/blog1/1.jpeg">
+          <img src="images/blog1/2.jpg">
+          <img src="images/blog1/3.jpg">
+          <img src="images/blog1/4.jpg">
+        </div>
+        <div class="card-content">
+          <h3>PAPELERÍA CORPORATIVA</h3>
+          <p>Creamos papelería personalizada que refleja tu marca con sofisticación, utilizando materiales de alta calidad y asegurando coherencia visual en todos los elementos, con soluciones adaptadas a tus necesidades, desde papelería básica hasta diseños elaborados.</p>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="card">
+        <div class="image-slider">
+          <img src="images/blog2/1.jpeg">
+          <img src="images/blog2/2.jpeg">
+          <img src="images/blog2/3.jpeg">
+          <img src="images/blog2/4.jpeg">
+        </div>
+        <div class="card-content">
+          <h3>MARKETING DIGITAL</h3>
+          <p>Ofrecemos SEO avanzado para aumentar tu visibilidad y atraer tráfico orgánico, campañas en Google Ads y redes sociales para generar leads, gestión de redes con contenido estratégico para construir comunidad, marketing de contenidos y email para conectar con tus clientes.</p>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div class="card">
+        <div class="image-slider">
+          <img src="images/blog3/1.png">
+          <img src="images/blog3/2.jpeg">
+          <img src="images/blog3/3.jpeg">
+          <img src="images/blog3/4.jpeg">
+        </div>
+        <div class="card-content">
+          <h3>DISEÑO WEB</h3>
+          <p>Diseñamos sitios web atractivos y personalizados que reflejan tu marca, optimizados para todos los dispositivos. Garantizamos velocidad, rendimiento y facilidad de administración con plataformas intuitivas. Incluimos SEO desde el inicio y ofrecemos soporte continuo para que siempre estés respaldado..</p>
+        </div>
+      </div>
+
+       <div class="card">
+        <div class="image-slider">
+          <img src="images/blog4/1.jpeg">
+          <img src="images/blog4/2.jpeg">
+          <img src="images/blog4/3.jpeg">
+          <img src="images/blog4/4.jpeg">
+        </div>
+        <div class="card-content">
+          <h3>BTL FOTOGRAFÍA Y VIDEO</h3>
+          <p>Fotografía impactante que captura momentos clave de eventos y promociones; video creativo que cuenta historias auténticas para campañas, testimonios y redes sociales; y estrategia BTL con contenido visual alineado a tus objetivos para lograr un impacto real..</p>
+        </div>
+      </div>
+
+      
+       <div class="card">
+        <div class="image-slider">
+          <img src="images/blog4/1.jpeg">
+          <img src="images/blog4/2.jpeg">
+          <img src="images/blog4/3.jpeg">
+          <img src="images/blog4/4.jpeg">
+        </div>
+        <div class="card-content">
+          <h3>BTL FOTOGRAFÍA Y VIDEO</h3>
+          <p>Fotografía impactante que captura momentos clave de eventos y promociones; video creativo que cuenta historias auténticas para campañas, testimonios y redes sociales; y estrategia BTL con contenido visual alineado a tus objetivos para lograr un impacto real..</p>
+        </div>
+      </div>
+
+      
+       <div class="card">
+        <div class="image-slider">
+          <img src="images/blog4/1.jpeg">
+          <img src="images/blog4/2.jpeg">
+          <img src="images/blog4/3.jpeg">
+          <img src="images/blog4/4.jpeg">
+        </div>
+        <div class="card-content">
+          <h3>BTL FOTOGRAFÍA Y VIDEO</h3>
+          <p>Fotografía impactante que captura momentos clave de eventos y promociones; video creativo que cuenta historias auténticas para campañas, testimonios y redes sociales; y estrategia BTL con contenido visual alineado a tus objetivos para lograr un impacto real..</p>
+        </div>
+      </div>
+      <br>
+
+  <!-- Testimonios-->
+  <main>
+    <h1>Testimonios</h1>
+    <p class="subtitle">Lo que dicen nuestros usuarios sobre nuestra increíble plataforma</p>
+    <section class="testimonials" aria-label="Testimonios de usuarios">
+      <article class="testimonial-card" tabindex="0">
+        <blockquote>
+          Esta plataforma transformó por completo la manera en que gestiono mis proyectos. ¡Muy fácil y rápida!
+        </blockquote>
+        <div class="author-info">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto de Ana Gómez" class="author-pic" />
+          <div class="author-details">
+            <div class="author">Ana Gómez</div>
+            <div class="role">Gerente de Proyectos</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" tabindex="0">
+        <blockquote>
+          La interfaz es limpia y moderna, y el soporte al cliente siempre está disponible para ayudar.
+        </blockquote>
+        <div class="author-info">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de Carlos Ruiz" class="author-pic" />
+          <div class="author-details">
+            <div class="author">Carlos Ruiz</div>
+            <div class="role">Desarrollador Frontend</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" tabindex="0">
+        <blockquote>
+          Gracias a esta herramienta he podido optimizar tiempos y mejorar la colaboración con mi equipo.
+        </blockquote>
+        <div class="author-info">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de María Fernández" class="author-pic" />
+          <div class="author-details">
+            <div class="author">María Fernández</div>
+            <div class="role">Consultora de Negocios</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card" tabindex="0">
+        <blockquote>
+          Recomiendo esta solución a cualquiera que busque simplicidad sin sacrificar potencia.
+        </blockquote>
+        <div class="author-info">
+          <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Foto de Luis Martínez" class="author-pic" />
+          <div class="author-details">
+            <div class="author">Luis Martínez</div>
+            <div class="role">Emprendedor</div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+
+      
+
+       
+
+      <!-- Repite hasta el proyecto 20 -->
+
+      <!-- ... pegamos más tarjetas hasta la 20 ... -->
+      <!-- Para ahorrar espacio, avísame si quieres que te genere las 16 restantes aquí mismo -->
+
+    </div>
+  </div>
+
+    <!-- Service End -->
+
+
+    <!-- Footer Start -->
+        <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top"
+     style="background-image: url('images/encabezado.jpg'); background-size: cover; background-position: center;">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Ponte en contacto</h4>
+                
+                <p><i class="fa fa-phone-alt mr-2"></i>+57 310 2639160</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>Info@gatoblanco.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Redes Sociales</h4>
+                <p>¡Síguenos y no te pierdas ninguna novedad!</p>
+                <div class="d-flex justify-content-start">
+                   
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.facebook.com/share/16fFigFDRm/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="https://www.linkedin.com/company/gato-blanco-dise%C3%B1o-y-marketing-s-a-s/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square" href="https://www.instagram.com/gatoblancodiseno/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horarios</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Lunes a Viernes</h6>
+                    <p>7Am-5Pm</p>
+                    <h6 class="text-white text-uppercase">Sabados</h6>
+                    <p>8Am-12Pm</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Información</h4>
+                <p>‌Nuestro enfoque es, potenciar,transformar y crear ideas </p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary font-weight-bold px-3">Contactenos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            
+            <p class="m-0 text-white">Diseñado por<a class="font-weight-bold" href="https://www.instagram.com/codigodemichel/">@codigosdemichel</a></p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

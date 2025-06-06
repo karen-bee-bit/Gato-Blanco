@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blog y Testimonios </title>
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+<!-- Google Font pendiente -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+<!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.ico" type="image/x-icon" />
+    <img src="images/icono.png" alt="Icono" class="icono-esquina">
+    <a href="https://wa.me/3168043558" class="whatsapp-float" target="_blank" title="Envíanos un mensaje">
+    <i class="fab fa-whatsapp"></i>
+    <!-- Customized Bootstrap Stylesheet -->
+    
+    
+<style>
+  .icono-esquina {
+    position: fixed; /* Se mantiene en su lugar al hacer scroll */
+    top: 50px;
+    right: 20px; /* Ajustado para que esté visible en la pantalla */
+    width: 180px; /* Ajusta según tu imagen */
+    height: 60px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 2s infinite;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #128c7e;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9fb;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 960px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  header {
+    padding: 30px 40px;
+    background: #0077ff;
+    color: white;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  nav {
+    display: flex;
+    background: #f4f7fb;
+    border-bottom: 1px solid #e2e6ef;
+  }
+
+  nav button {
+    flex: 1;
+    padding: 18px 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #555;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  nav button.active, nav button:hover {
+    background: #0077ff;
+    color: white;
+  }
+
+  main {
+    padding: 30px 40px;
+    min-height: 380px;
+  }
+
+  /* Projects */
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+  }
+
+  .project-card {
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .carousel {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+    border-bottom: 2px solid #0077ff;
+  }
+
+  .carousel img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+
+  .carousel img.active {
+    opacity: 1;
+    position: relative;
+  }
+
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .carousel-controls button {
+    background: rgba(0, 119, 255, 0.7);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 4px 12px;
+    cursor: pointer;
+    pointer-events: auto;
+    border-radius: 6px;
+    user-select: none;
+    transition: background 0.3s;
+  }
+
+  .carousel-controls button:hover {
+    background: #005ecc;
+  }
+
+  .project-content {
+    padding: 20px;
+    flex-grow: 1;
+  }
+
+  .project-title {
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #004bb5;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #555;
+  }
+
+  /* Testimonials */
+  .testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    background: #e7f0ff;
+    border-radius: 12px;
+    padding: 24px 30px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+
+  .testimonial-photo {
+    width: 70px;
+    height: 70px;
+    background: #0077ff url('https://via.placeholder.com/70?text=Foto') center center no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 3px solid white;
+    box-shadow: 0 0 8px rgba(0, 119, 255, 0.5);
+  }
+
+  .testimonial-content {
+    flex-grow: 1;
+  }
+
+  .testimonial-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 6px;
+    color: #003d99;
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    color: #273c75;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Responsive */
+  @media (max-width: 540px) {
+    main {
+      padding: 20px;
+    }
+    nav button {
+      padding: 15px 0;
+      font-size: 1rem;
+    }
+    .carousel, .carousel img {
+      height: 130px;
+    }
+  }
+</style>
+
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Sección de proyectos y testimonios">
+    <header>
+      <h1>Proyectos & Testimonios</h1>
+    </header>
+    <nav role="tablist" aria-label="Navegación entre proyectos y testimonios">
+      <button role="tab" aria-selected="true" id="tab-projects" aria-controls="panel-projects" class="active">Proyectos</button>
+      <button role="tab" aria-selected="false" id="tab-testimonials" aria-controls="panel-testimonials">Testimonios</button>
+    </nav>
+    <main>
+      <section id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
+        <div class="projects-container" id="projects-list">
+          <!-- Projects will be dynamically inserted here -->
+        </div>
+      </section>
+      <section id="panel-testimonials" role="tabpanel" aria-labelledby="tab-testimonials" hidden>
+        <div class="testimonials-container" id="testimonials-list">
+          <!-- Testimonials will be dynamically inserted here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+<script>
+  const projects = [
+    {
+      title: "Aplicación de Tareas",
+      description: "Una app web moderna para gestionar tus tareas diarias con recordatorios y progreso.",
+      images: [
+        "https://via.placeholder.com/300x160?text=App+de+Tareas+1",
+        "https://via.placeholder.com/300x160?text=App+de+Tareas+2",
+        "https://via.placeholder.com/300x160?text=App+de+Tareas+3"
+      ]
+    },
+    {
+      title: "Sitio Corporativo",
+      description: "Desarrollo de un sitio web profesional para una empresa con diseño responsivo y SEO optimizado.",
+      images: [
+        "https://via.placeholder.com/300x160?text=Sitio+Corporativo+1",
+        "https://via.placeholder.com/300x160?text=Sitio+Corporativo+2"
+      ]
+    },
+    {
+      title: "E-commerce",
+      description: "Tienda online con carrito, pago seguro y panel de administración personalizado.",
+      images: [
+        "https://via.placeholder.com/300x160?text=E-commerce+1",
+        "https://via.placeholder.com/300x160?text=E-commerce+2",
+        "https://via.placeholder.com/300x160?text=E-commerce+3",
+        "https://via.placeholder.com/300x160?text=E-commerce+4"
+      ]
+    },
+    {
+      title: "Portafolio Personal",
+      description: "Sitio para mostrar proyectos personales, blogs y habilidades técnicas.",
+      images: [
+        "https://via.placeholder.com/300x160?text=Portafolio+1",
+        "https://via.placeholder.com/300x160?text=Portafolio+2"
+      ]
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Laura Gutiérrez",
+      text: "El equipo realizó un trabajo excepcional. La comunicación fue clara y el resultado superó mis expectativas.",
+      photo: "https://via.placeholder.com/70?text=LG"
+    },
+    {
+      name: "Carlos Méndez",
+      text: "Profesionales y muy atentos a los detalles, entregaron el proyecto a tiempo y con calidad.",
+      photo: "https://via.placeholder.com/70?text=CM"
+    },
+    {
+      name: "Ana Torres",
+      text: "Los recomiendo ampliamente por su dedicación y creatividad en cada proyecto que desarrollan.",
+      photo: "https://via.placeholder.com/70?text=AT"
+    }
+  ];
+
+  function renderProjects() {
+    const container = document.getElementById('projects-list');
+    container.innerHTML = '';
+    projects.forEach((proj, index) => {
+      const card = document.createElement('article');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <div class="carousel" id="carousel-${index}">
+          ${proj.images.map((img, i) => `
+            <img src="${img}" alt="Imagen del proyecto ${proj.title} número ${i + 1}" class="${i === 0 ? 'active' : ''}" />
+          `).join('')}
+          <div class="carousel-controls">
+            <button aria-label="Imagen anterior" data-index="${index}" data-dir="prev">&#10094;</button>
+            <button aria-label="Imagen siguiente" data-index="${index}" data-dir="next">&#10095;</button>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">${proj.title}</h3>
+          <p class="project-description">${proj.description}</p>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function renderTestimonials() {
+    const container = document.getElementById('testimonials-list');
+    container.innerHTML = '';
+    testimonials.forEach(test => {
+      const card = document.createElement('blockquote');
+      card.className = 'testimonial-card';
+      card.innerHTML = `
+        <div class="testimonial-photo" style="background-image: url('${test.photo}');" aria-hidden="true"></div>
+        <div class="testimonial-content">
+          <p class="testimonial-name">${test.name}</p>
+          <p class="testimonial-text">"${test.text}"</p>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function setupTabs() {
+    const tabs = document.querySelectorAll('nav button');
+    const panels = document.querySelectorAll('main > section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Set active tab
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Show/hide panels
+        panels.forEach(panel => panel.hidden = true);
+        const targetPanel = document.getElementById(tab.getAttribute('aria-controls'));
+        targetPanel.hidden = false;
+      });
+    });
+  }
+
+  // Carousel functionality for projects
+  function setupCarousels() {
+    const intervals = [];
+    function showImage(carouselElem, imgs, currentIndex, newIndex) {
+      imgs[currentIndex].classList.remove('active');
+      imgs[newIndex].classList.add('active');
+    }
+
+    projects.forEach((proj, index) => {
+      const carousel = document.getElementById(`carousel-${index}`);
+      const imgs = carousel.querySelectorAll('img');
+
+      let currentIndex = 0;
+
+      function nextImage() {
+        const newIndex = (currentIndex + 1) % imgs.length;
+        showImage(carousel, imgs, currentIndex, newIndex);
+        currentIndex = newIndex;
+      }
+
+      function prevImage() {
+        const newIndex = (currentIndex - 1 + imgs.length) % imgs.length;
+        showImage(carousel, imgs, currentIndex, newIndex);
+        currentIndex = newIndex;
+      }
+
+      // Next and Prev buttons
+      carousel.querySelectorAll('.carousel-controls button').forEach(button => {
+        button.addEventListener('click', e => {
+          e.stopPropagation();
+          const dir = button.getAttribute('data-dir');
+          if (dir === 'next') {
+            nextImage();
+            resetInterval();
+          } else if (dir === 'prev') {
+            prevImage();
+            resetInterval();
+          }
+        });
+      });
+
+      // Auto rotate images every 4 seconds
+      let intervalId = setInterval(nextImage, 4000);
+      intervals.push(intervalId);
+
+      // Reset interval when user interacts
+      function resetInterval() {
+        clearInterval(intervalId);
+        intervalId = setInterval(nextImage, 4000);
+        // Update the interval in intervals array
+        intervals[index] = intervalId;
+      }
+    });
+  }
+
+
+  // Initialize page content and tabs
+  renderProjects();
+  renderTestimonials();
+  setupTabs();
+  setupCarousels();
+</script>
+</body>
+</html>
+
